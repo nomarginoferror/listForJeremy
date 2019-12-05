@@ -37,13 +37,16 @@ export default {
     };
   },
   methods: {
+    //Clear input after Submit
     clearFields() {
       this.name = "";
       this.dob = "";
       this.email = "";
     },
     addTodo(e) {
+      //Prevent Page Reload
       e.preventDefault();
+      //New person Object and concat to existing array
       if (this.name) {
         const newPerson = {
           id: Date.now(),
@@ -76,16 +79,5 @@ export default {
 h3 {
   margin: 0;
   display: inline;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
