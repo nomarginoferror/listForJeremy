@@ -1,6 +1,13 @@
 <template>
-  <div>
+  <div v-if="people.length > 0">
     <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">DOB</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
       <tbody v-bind:key="people.id" v-for="people in people">
         <Item v-bind:people="people" />
       </tbody>

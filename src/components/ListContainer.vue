@@ -44,14 +44,18 @@ export default {
     },
     addTodo(e) {
       e.preventDefault();
-      const newPerson = {
-        id: Date.now(),
-        name: this.name,
-        dob: this.dob,
-        email: this.email
-      };
-      this.people = [...this.people, newPerson];
-      this.clearFields();
+      if (this.name) {
+        const newPerson = {
+          id: Date.now(),
+          name: this.name,
+          dob: this.dob,
+          email: this.email
+        };
+        this.people = [...this.people, newPerson];
+        this.clearFields();
+      } else {
+        alert("Name must not be blank.");
+      }
     }
   }
 };
